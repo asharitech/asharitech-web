@@ -6,6 +6,8 @@
         "dev": "next dev -H 0.0.0.0 --turbopack",
         "build": "next build",
         "start": "next start",
+        "deploy": "bun run build && netlify deploy --dir=out --prod",
+        "deploy:preview": "bun run build && netlify deploy --dir=out",
         "lint": "bunx biome lint --write && bunx tsc --noEmit",
         "format": "bunx biome format --write"
     },
