@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme configuration */
+@theme {
+  /* shadcn/ui compatible colors */
+  --color-background: 0 0% 100%;
+  --color-foreground: 240 10% 3.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 240 10% 3.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 240 10% 3.9%;
+  --color-primary: 240 5.9% 10%;
+  --color-primary-foreground: 0 0% 98%;
+  --color-secondary: 240 4.8% 95.9%;
+  --color-secondary-foreground: 240 5.9% 10%;
+  --color-muted: 240 4.8% 95.9%;
+  --color-muted-foreground: 240 3.8% 46.1%;
+  --color-accent: 240 4.8% 95.9%;
+  --color-accent-foreground: 240 5.9% 10%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 240 5.9% 90%;
+  --color-input: 240 5.9% 90%;
+  --color-ring: 240 5.9% 10%;
+  
+  /* Ashari Tech Indonesian-inspired brand colors */
+  --color-soka-red: #B7410E;
+  --color-soka-red-hover: #9A390C;
+  --color-java-sand: #EDE6DB;
+  --color-teal-cendrawasih: #247C7C;
+  --color-teal-cendrawasih-hover: #1D6666;
+  --color-spice-gold: #D9A441;
+  --color-spice-gold-hover: #C7942B;
+  --color-kopi-brown: #4A2C23;
+  --color-tropical-bamboo: #688C49;
+  
+  /* Legacy colors (keeping for compatibility) */
+  --color-cream: #EDE6DB;
+  --color-rust: #B7410E;
+  --color-rust-hover: #9A390C;
+  --color-terracotta: #b8a091;
+  --color-terracotta-hover: #a6866e;
+  --color-soft-gray: #d4d3cc;
+  
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for sticky header */
+  }
+  
+  body {
+    background: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
