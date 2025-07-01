@@ -181,8 +181,12 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#FF9900" />
+        <meta name="theme-color" content="#181224" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181224" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#181224" />
         <meta name="msapplication-TileColor" content="#181224" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"

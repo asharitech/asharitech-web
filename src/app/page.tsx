@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,6 +11,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { PolygonCluster } from "@/components/ui/polygon-shape";
 import { SectionDivider } from "@/components/ui/section-divider";
+import { MobileMenuButton } from "@/components/ui/mobile-menu-button";
+import { GlobalMobileMenu } from "@/components/ui/global-mobile-menu";
+import { MobileNavProvider, useMobileNav } from "@/contexts/mobile-nav-context";
 import Logo from "@/components/logo";
 import {
   ArrowRight,
@@ -26,57 +31,70 @@ import {
   CircuitBoard,
 } from "lucide-react";
 
-export default function Home() {
+function HomeContent() {
+  const { isOpen, toggleMenu, closeMenu } = useMobileNav();
+
   return (
-    <main className="min-h-screen relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden pt-20 sm:pt-24">
       {/* Navigation */}
       <nav
-        className="sticky top-0 z-50 w-full px-4 sm:px-6 py-4 glass-card border-b-0 rounded-b-2xl"
+        className="fixed top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-3 sm:py-4 glass-card border-b-0 rounded-b-2xl backdrop-blur-xl"
         aria-label="Main navigation"
+        style={{
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+        }}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-7xl mx-auto flex justify-between items-center min-h-[56px]">
           <Logo size="md" showText={true} glowIntensity="high" />
-          <div className="hidden sm:flex items-center space-x-8">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             <a
               href="#about"
-              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
               aria-label="Learn about Ashari Tech"
             >
               About
             </a>
             <a
               href="#products"
-              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
               aria-label="View our products"
             >
               Products
             </a>
             <a
               href="#goals"
-              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
               aria-label="Our company goals"
             >
               Goals
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
               aria-label="Contact us"
             >
               Contact
             </a>
+          </div>
+
+          {/* Mobile Navigation Button */}
+          <div className="flex md:hidden">
+            <MobileMenuButton isOpen={isOpen} onClick={toggleMenu} />
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section
-        className="relative flex-1 flex items-center justify-center px-4 sm:px-6 py-24 lg:py-32"
+        className="relative flex-1 flex items-center justify-center mobile-spacing py-16 sm:py-24 lg:py-32"
         aria-labelledby="hero-heading"
       >
         <div className="max-w-6xl mx-auto text-center space-y-10 relative z-10">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neon-border">
+          <div className="space-y-8 sm:space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neon-border mt-8 sm:mt-6">
               <Sparkles className="w-4 h-4 text-neon-orange" />
               <span className="text-xs font-semibold tracking-widest uppercase text-gold-orange">
                 Made in Indonesia
@@ -84,7 +102,7 @@ export default function Home() {
             </div>
             <h1
               id="hero-heading"
-              className="text-text-primary text-balance text-5xl sm:text-6xl md:text-7xl font-bold leading-tight tracking-tight"
+              className="text-text-primary text-balance text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
             >
               Revolutionizing the Future with{" "}
               <span className="gradient-text">AI and Technology</span>
@@ -97,15 +115,15 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <Button asChild size="lg" className="btn-neon group text-white">
-              <a href="#products">
+            <Button asChild size="lg" className="btn-neon group text-white touch-target">
+              <a href="#products" className="w-full sm:w-auto">
                 <CircuitBoard className="w-4 h-4 text-neon-orange" />
                 Explore Our Products
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10">
-              <a href="#about">Learn More</a>
+            <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 touch-target">
+              <a href="#about" className="w-full sm:w-auto">Learn More</a>
             </Button>
           </div>
         </div>
@@ -123,7 +141,7 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="relative py-24 px-4 sm:px-6"
+        className="relative mobile-spacing py-16 sm:py-24"
         aria-labelledby="about-heading"
       >
         <div className="max-w-6xl mx-auto">
@@ -141,17 +159,17 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300 mobile-card-spacing">
               <CardHeader>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
                   <Target className="h-7 w-7 text-white" aria-hidden="true" />
                 </div>
-                <CardTitle className="text-2xl text-text-primary">
+                <CardTitle className="text-xl sm:text-2xl text-text-primary">
                   Our Vision
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-text-secondary leading-relaxed text-base">
+                <CardDescription className="text-text-secondary leading-relaxed text-base sm:text-lg">
                   To be the leading force in Indonesia's technological
                   revolution, establishing AI and digital innovation as the
                   cornerstone for economic growth, social progress, and
@@ -160,7 +178,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300 mobile-card-spacing">
               <CardHeader>
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
                   <Lightbulb
@@ -168,12 +186,12 @@ export default function Home() {
                     aria-hidden="true"
                   />
                 </div>
-                <CardTitle className="text-2xl text-text-primary">
+                <CardTitle className="text-xl sm:text-2xl text-text-primary">
                   Our Mission
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-text-secondary leading-relaxed text-base">
+                <CardDescription className="text-text-secondary leading-relaxed text-base sm:text-lg">
                   To harness the power of cutting-edge AI and technology to
                   transform Indonesia's landscape—from boosting business
                   efficiency and SME growth to improving the quality of life for
@@ -191,7 +209,7 @@ export default function Home() {
       {/* Products Section */}
       <section
         id="products"
-        className="relative py-24 px-4 sm:px-6"
+        className="relative mobile-spacing py-16 sm:py-24"
         aria-labelledby="products-heading"
       >
         <div className="max-w-6xl mx-auto">
@@ -265,23 +283,25 @@ export default function Home() {
                   <Button
                     asChild
                     size="lg"
-                    className="btn-neon group text-white"
+                    className="btn-neon group text-white touch-target"
                   >
                     <a
                       href="https://t.me/brainybuddybot"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="w-full sm:w-auto"
                     >
                       <Link2 className="mr-2 h-4 w-4" />
                       Chat di Telegram
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 group">
+                  <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 group touch-target">
                     <a
                       href="https://line.me/R/ti/p/@125nkjfl"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="w-full sm:w-auto"
                     >
                       <Link2 className="mr-2 h-4 w-4" />
                       Chat di LINE
@@ -301,7 +321,7 @@ export default function Home() {
       {/* Goals Section */}
       <section
         id="goals"
-        className="relative py-24 px-4 sm:px-6"
+        className="relative mobile-spacing py-16 sm:py-24"
         aria-labelledby="goals-heading"
       >
         <div className="max-w-6xl mx-auto">
@@ -395,7 +415,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="relative py-24 px-4 sm:px-6"
+        className="relative mobile-spacing py-16 sm:py-24"
         aria-labelledby="contact-heading"
       >
         <div className="max-w-4xl mx-auto text-center">
@@ -476,15 +496,15 @@ export default function Home() {
             </Card>
           </div>
 
-          <Button size="lg" className="btn-neon group text-white">
-            Start Your Digital Journey
+          <Button size="lg" className="btn-neon group text-white touch-target">
+            <span>Start Your Digital Journey</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative w-full px-4 sm:px-6 py-12 glass-card rounded-t-3xl border-t border-glass-border overflow-hidden">
+      <footer className="relative w-full mobile-spacing py-8 sm:py-12 glass-card rounded-t-3xl border-t border-glass-border overflow-hidden">
         {/* Mesh pattern background */}
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -517,6 +537,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Global Mobile Menu */}
+      <GlobalMobileMenu isOpen={isOpen} onClose={closeMenu} />
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <MobileNavProvider>
+      <HomeContent />
+    </MobileNavProvider>
   );
 }
