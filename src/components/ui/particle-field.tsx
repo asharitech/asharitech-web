@@ -21,7 +21,7 @@ export function ParticleField({
   speed = 0.5,
 }: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
 
   class Particle {
@@ -122,7 +122,7 @@ export function ParticleField({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [particleCount, particleColor, lineColor, maxDistance, speed]);
+  }, [particleCount, particleColor, lineColor, maxDistance, speed, Particle]);
 
   return (
     <canvas
