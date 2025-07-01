@@ -24,15 +24,15 @@ import { Separator } from "@/components/ui/separator";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { 
-  Save, 
-  Eye, 
-  Calendar, 
-  Tag, 
-  User, 
+import {
+  Save,
+  Eye,
+  Calendar,
+  Tag,
+  User,
   FileText,
   Image as ImageIcon,
-  Settings
+  Settings,
 } from "lucide-react";
 
 // Form schema
@@ -64,14 +64,14 @@ export default function CreatePostPage() {
     defaultValues: {
       status: "draft",
       featured: false,
-      publishedAt: new Date().toISOString().split('T')[0],
+      publishedAt: new Date().toISOString().split("T")[0],
     },
   });
 
   const onSubmit = async (data: PostFormData) => {
     console.log("Form data:", data);
     // Here you would typically send the data to your API
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API call
   };
 
   const watchedStatus = watch("status");
@@ -232,7 +232,12 @@ export default function CreatePostPage() {
                 <div>
                   <Label htmlFor="status">Status</Label>
                   <Select
-                    onValueChange={(value) => setValue("status", value as "draft" | "published" | "scheduled")}
+                    onValueChange={(value) =>
+                      setValue(
+                        "status",
+                        value as "draft" | "published" | "scheduled",
+                      )
+                    }
                     defaultValue="draft"
                   >
                     <SelectTrigger>
@@ -278,7 +283,9 @@ export default function CreatePostPage() {
               <CardContent className="space-y-4">
                 <div>
                   <Label htmlFor="category">Category *</Label>
-                  <Select onValueChange={(value) => setValue("category", value)}>
+                  <Select
+                    onValueChange={(value) => setValue("category", value)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>

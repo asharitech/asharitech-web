@@ -116,7 +116,9 @@ export default function SimpleCMSDashboard() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
           <Card className="bg-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Content</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Total Content
+              </CardTitle>
               <FileText className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -150,7 +152,9 @@ export default function SimpleCMSDashboard() {
 
           <Card className="bg-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Users</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Active Users
+              </CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -167,7 +171,9 @@ export default function SimpleCMSDashboard() {
 
           <Card className="bg-white">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Conversion Rate</CardTitle>
+              <CardTitle className="text-sm font-medium">
+                Conversion Rate
+              </CardTitle>
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -248,7 +254,9 @@ export default function SimpleCMSDashboard() {
                             </Badge>
                             <Badge
                               variant={
-                                item.status === "Published" ? "default" : "outline"
+                                item.status === "Published"
+                                  ? "default"
+                                  : "outline"
                               }
                               className="text-xs"
                             >
@@ -257,7 +265,9 @@ export default function SimpleCMSDashboard() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-medium">{item.views} views</p>
+                          <p className="text-sm font-medium">
+                            {item.views} views
+                          </p>
                           <p className="text-xs text-muted-foreground">
                             {item.date}
                           </p>
@@ -340,7 +350,8 @@ export default function SimpleCMSDashboard() {
                     Advanced Content Management
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Data tables with filtering, sorting, and editing capabilities.
+                    Data tables with filtering, sorting, and editing
+                    capabilities.
                   </p>
                   <div className="flex gap-2 justify-center">
                     <Button>
@@ -348,9 +359,7 @@ export default function SimpleCMSDashboard() {
                       Create New Post
                     </Button>
                     <Button variant="outline" asChild>
-                      <a href="/cms/content/posts">
-                        View All Posts
-                      </a>
+                      <a href="/cms/content/posts">View All Posts</a>
                     </Button>
                   </div>
                 </div>

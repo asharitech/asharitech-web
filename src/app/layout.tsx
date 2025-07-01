@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
+
+// Primary font - Space Grotesk for headings
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
+
+// Secondary font - Inter for body text
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+// Accent font - Montserrat for special elements
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title:
@@ -131,7 +153,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <script
           type="application/ld+json"
@@ -159,14 +181,18 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#9d5a41" />
-        <meta name="msapplication-TileColor" content="#9d5a41" />
+        <meta name="theme-color" content="#FF9900" />
+        <meta name="msapplication-TileColor" content="#181224" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body
+        className={`antialiased ${spaceGrotesk.variable} ${inter.variable} ${montserrat.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

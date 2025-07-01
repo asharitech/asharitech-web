@@ -7,6 +7,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PolygonCluster } from "@/components/ui/polygon-shape";
+import { SectionDivider } from "@/components/ui/section-divider";
+import Logo from "@/components/logo";
 import {
   ArrowRight,
   Users,
@@ -15,62 +18,49 @@ import {
   Globe,
   Zap,
   Bot,
-  ExternalLink,
+  Link2,
   Mail,
   Github,
   Instagram,
+  Sparkles,
+  CircuitBoard,
 } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-java-sand">
+    <main className="min-h-screen relative overflow-hidden">
       {/* Navigation */}
       <nav
-        className="sticky top-0 z-50 w-full px-4 sm:px-6 py-4 bg-white border-b border-soft-gray"
+        className="sticky top-0 z-50 w-full px-4 sm:px-6 py-4 glass-card border-b-0 rounded-b-2xl"
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <div
-              className="w-10 h-10 bg-rust rounded-lg flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <span className="text-white font-bold text-lg">A</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-zinc-800">
-                Ashari Tech
-              </span>
-              <span className="text-xs text-zinc-600 font-medium">
-                AI & Technology
-              </span>
-            </div>
-          </div>
-          <div className="hidden sm:flex items-center space-x-6">
+          <Logo size="md" showText={true} glowIntensity="high" />
+          <div className="hidden sm:flex items-center space-x-8">
             <a
               href="#about"
-              className="text-sm font-medium text-zinc-700 hover:text-rust"
+              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
               aria-label="Learn about Ashari Tech"
             >
               About
             </a>
             <a
               href="#products"
-              className="text-sm font-medium text-zinc-700 hover:text-rust"
+              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
               aria-label="View our products"
             >
               Products
             </a>
             <a
               href="#goals"
-              className="text-sm font-medium text-zinc-700 hover:text-rust"
+              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
               aria-label="Our company goals"
             >
               Goals
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-zinc-700 hover:text-rust"
+              className="text-sm font-medium text-text-secondary hover:text-neon-orange transition-colors"
               aria-label="Contact us"
             >
               Contact
@@ -81,26 +71,25 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className="flex-1 flex items-center justify-center px-4 sm:px-6 py-16 lg:py-24"
+        className="relative flex-1 flex items-center justify-center px-4 sm:px-6 py-24 lg:py-32"
         aria-labelledby="hero-heading"
       >
-        <div className="max-w-6xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <Badge
-              className="bg-rust/10 text-rust border-rust/20 mb-4"
-              role="img"
-              aria-label="Made in Indonesia"
-            >
-              🇮🇩 Made in Indonesia
-            </Badge>
+        <div className="max-w-6xl mx-auto text-center space-y-10 relative z-10">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neon-border">
+              <Sparkles className="w-4 h-4 text-neon-orange" />
+              <span className="text-xs font-semibold tracking-widest uppercase text-gold-orange">
+                Made in Indonesia
+              </span>
+            </div>
             <h1
               id="hero-heading"
-              className="text-zinc-800 text-balance text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+              className="text-text-primary text-balance text-5xl sm:text-6xl md:text-7xl font-bold leading-tight tracking-tight"
             >
               Revolutionizing the Future with{" "}
-              <span className="text-rust font-bold">AI and Technology</span>
+              <span className="gradient-text">AI and Technology</span>
             </h1>
-            <p className="text-zinc-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-text-secondary text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
               At Ashari Tech, we harness cutting-edge AI and technology to
               transform Indonesia's landscape, empowering SMEs, enhancing lives,
               and building a more connected, prosperous future for all.
@@ -108,58 +97,61 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <Button
-              asChild
-              className="bg-rust hover:bg-rust-hover text-white px-6 py-3"
-              size="lg"
-            >
+            <Button asChild size="lg" className="btn-neon group text-white">
               <a href="#products">
+                <CircuitBoard className="w-4 h-4 text-neon-orange" />
                 Explore Our Products
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="border-rust text-rust hover:bg-rust/5 px-6 py-3"
-              size="lg"
-            >
+            <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10">
               <a href="#about">Learn More</a>
             </Button>
           </div>
         </div>
+
+        {/* Decorative Polygonal Shapes */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 pointer-events-none">
+          <PolygonCluster className="absolute bottom-20 left-10" />
+          <PolygonCluster className="absolute bottom-10 right-10 scale-75" />
+        </div>
       </section>
+
+      {/* Divider between Hero and About */}
+      <SectionDivider variant="angular" color="orange" />
 
       {/* About Section */}
       <section
         id="about"
-        className="py-16 px-4 sm:px-6 bg-white"
+        className="relative py-24 px-4 sm:px-6"
         aria-labelledby="about-heading"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2
               id="about-heading"
-              className="text-3xl sm:text-4xl font-bold text-zinc-800 mb-4"
+              className="text-4xl sm:text-5xl font-bold text-text-primary mb-4"
             >
               Our Mission & Vision
             </h2>
-            <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
               Driving Indonesia's technological revolution through innovation,
               accessibility, and sustainable growth.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-soft-gray">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <div className="w-12 h-12 bg-rust/10 rounded-lg flex items-center justify-center mb-4">
-                  <Target className="h-6 w-6 text-rust" aria-hidden="true" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                  <Target className="h-7 w-7 text-white" aria-hidden="true" />
                 </div>
-                <CardTitle className="text-zinc-800">Our Vision</CardTitle>
+                <CardTitle className="text-2xl text-text-primary">
+                  Our Vision
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-zinc-600 leading-relaxed">
+                <CardDescription className="text-text-secondary leading-relaxed text-base">
                   To be the leading force in Indonesia's technological
                   revolution, establishing AI and digital innovation as the
                   cornerstone for economic growth, social progress, and
@@ -168,15 +160,20 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-soft-gray">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader>
-                <div className="w-12 h-12 bg-rust/10 rounded-lg flex items-center justify-center mb-4">
-                  <Lightbulb className="h-6 w-6 text-rust" aria-hidden="true" />
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                  <Lightbulb
+                    className="h-7 w-7 text-white"
+                    aria-hidden="true"
+                  />
                 </div>
-                <CardTitle className="text-zinc-800">Our Mission</CardTitle>
+                <CardTitle className="text-2xl text-text-primary">
+                  Our Mission
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-zinc-600 leading-relaxed">
+                <CardDescription className="text-text-secondary leading-relaxed text-base">
                   To harness the power of cutting-edge AI and technology to
                   transform Indonesia's landscape—from boosting business
                   efficiency and SME growth to improving the quality of life for
@@ -188,91 +185,107 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider between About and Products */}
+      <SectionDivider variant="mesh" color="gold" />
+
       {/* Products Section */}
       <section
         id="products"
-        className="py-16 px-4 sm:px-6 bg-cream"
+        className="relative py-24 px-4 sm:px-6"
         aria-labelledby="products-heading"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2
               id="products-heading"
-              className="text-3xl sm:text-4xl font-bold text-zinc-800 mb-4"
+              className="text-4xl sm:text-5xl font-bold text-text-primary mb-4"
             >
               Our Products
             </h2>
-            <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
               Innovative AI solutions designed to empower learning and enhance
               productivity.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
-            <Card className="border-soft-gray bg-white">
-              <CardHeader>
+            <Card className="glass-card border-0 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 opacity-10 blur-3xl" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}} />
+              <CardHeader className="relative">
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-rust rounded-lg flex items-center justify-center">
-                    <Bot className="h-8 w-8 text-white" />
+                  <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                    <Bot className="h-10 w-10 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-zinc-800 text-2xl">
+                    <CardTitle className="text-3xl text-text-primary">
                       Brainy Buddy
                     </CardTitle>
-                    <CardDescription className="text-zinc-600">
+                    <CardDescription className="text-text-secondary text-lg">
                       AI Assistant untuk Belajar
                     </CardDescription>
                   </div>
                 </div>
               </CardHeader>
-              <CardContent>
-                <p className="text-zinc-600 leading-relaxed mb-6">
+              <CardContent className="relative">
+                <p className="text-text-secondary leading-relaxed mb-8 text-base">
                   Meet Brainy Buddy, your intelligent learning companion
                   available 24/7. Designed to help students and learners tackle
                   assignments, understand complex topics, and enhance their
                   educational journey through personalized AI assistance.
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge variant="secondary" className="bg-rust/10 text-rust">
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <Badge
+                    variant="secondary"
+                    className="px-4 py-1.5 bg-neon-orange/10 text-neon-orange border border-neon-orange/30"
+                  >
                     24/7 Available
                   </Badge>
-                  <Badge variant="secondary" className="bg-rust/10 text-rust">
+                  <Badge
+                    variant="secondary"
+                    className="px-4 py-1.5 bg-gold-orange/10 text-gold-orange border border-gold-orange/30"
+                  >
                     Educational AI
                   </Badge>
-                  <Badge variant="secondary" className="bg-rust/10 text-rust">
+                  <Badge
+                    variant="secondary"
+                    className="px-4 py-1.5 bg-magenta-accent/10 text-magenta-accent border border-magenta-accent/30"
+                  >
                     Multi-platform
                   </Badge>
-                  <Badge variant="secondary" className="bg-rust/10 text-rust">
+                  <Badge
+                    variant="secondary"
+                    className="px-4 py-1.5 bg-bright-purple/10 text-bright-purple border border-bright-purple/30"
+                  >
                     Indonesian Language
                   </Badge>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     asChild
-                    className="bg-rust hover:bg-rust-hover text-white"
+                    size="lg"
+                    className="btn-neon group text-white"
                   >
                     <a
                       href="https://t.me/brainybuddybot"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                      <Link2 className="mr-2 h-4 w-4" />
                       Chat di Telegram
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
-                  <Button
-                    asChild
-                    className="bg-terracotta hover:bg-terracotta-hover text-white"
-                  >
+                  <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 group">
                     <a
                       href="https://line.me/R/ti/p/@125nkjfl"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                      <Link2 className="mr-2 h-4 w-4" />
                       Chat di LINE
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
                 </div>
@@ -282,21 +295,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider between Products and Goals */}
+      <SectionDivider variant="polygon" color="magenta" />
+
       {/* Goals Section */}
       <section
         id="goals"
-        className="py-16 px-4 sm:px-6 bg-white"
+        className="relative py-24 px-4 sm:px-6"
         aria-labelledby="goals-heading"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2
               id="goals-heading"
-              className="text-3xl sm:text-4xl font-bold text-zinc-800 mb-4"
+              className="text-4xl sm:text-5xl font-bold text-text-primary mb-4"
             >
               Our Goals
             </h2>
-            <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
               Six key objectives driving Indonesia's digital transformation and
               technological advancement.
             </p>
@@ -309,50 +325,61 @@ export default function Home() {
                 title: "Empowering SMEs",
                 description:
                   "Equip small and medium-sized enterprises with digital tools and AI capabilities to enhance competitiveness and market reach.",
+                color: "bg-neon-orange",
               },
               {
                 icon: Lightbulb,
                 title: "Innovating for Society",
                 description:
                   "Develop AI-powered solutions that enhance healthcare, education, and urban planning for a more equitable future.",
+                color: "bg-gold-orange",
               },
               {
                 icon: Globe,
                 title: "Advancing Digital Literacy",
                 description:
                   "Launch initiatives to boost digital skills across the population, preparing Indonesians for the digital economy.",
+                color: "bg-magenta-accent",
               },
               {
                 icon: Zap,
                 title: "Sustainable Technology",
                 description:
                   "Promote and develop sustainable technologies that minimize environmental impact for a green future.",
+                color: "bg-gold-orange-dark",
               },
               {
                 icon: Target,
                 title: "Strengthening Infrastructure",
                 description:
                   "Collaborate to enhance Indonesia's digital infrastructure, making internet more accessible and reliable.",
+                color: "bg-bright-purple",
               },
               {
                 icon: Bot,
                 title: "Innovation Hub",
                 description:
                   "Establish Ashari Tech as an innovation hub, attracting talent and partners for groundbreaking projects.",
+                color: "bg-neon-orange-dark",
               },
-            ].map((goal) => (
+            ].map((goal, index) => (
               <Card
                 key={goal.title}
-                className="border-soft-gray hover:border-rust/30 "
+                className="glass-card border-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <CardHeader>
-                  <div className="w-12 h-12 bg-rust/10 rounded-lg flex items-center justify-center mb-4">
-                    <goal.icon className="h-6 w-6 text-rust" />
+                  <div
+                    className={`w-14 h-14 ${goal.color} rounded-xl flex items-center justify-center mb-4`}
+                    style={{boxShadow: "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)"}}
+                  >
+                    <goal.icon className="h-7 w-7 text-white" />
                   </div>
-                  <CardTitle className="text-zinc-800">{goal.title}</CardTitle>
+                  <CardTitle className="text-xl text-text-primary">
+                    {goal.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-zinc-600 leading-relaxed">
+                  <CardDescription className="text-text-secondary leading-relaxed">
                     {goal.description}
                   </CardDescription>
                 </CardContent>
@@ -362,64 +389,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider between Goals and Contact */}
+      <SectionDivider variant="wave" color="orange" />
+
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-16 px-4 sm:px-6 bg-cream"
+        className="relative py-24 px-4 sm:px-6"
         aria-labelledby="contact-heading"
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2
             id="contact-heading"
-            className="text-3xl sm:text-4xl font-bold text-zinc-800 mb-4"
+            className="text-4xl sm:text-5xl font-bold text-text-primary mb-4"
           >
             Get in Touch
           </h2>
-          <p className="text-zinc-600 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg mb-12 max-w-2xl mx-auto">
             Ready to revolutionize your business with AI and technology? Let's
             build the future together.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="border-soft-gray bg-white">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <Mail className="h-8 w-8 text-rust mx-auto mb-2" />
-                <CardTitle className="text-zinc-800">Email</CardTitle>
+                <div className="w-14 h-14 bg-neon-orange rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{boxShadow: "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)"}}>
+                  <Mail className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg text-text-primary">
+                  Email
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <a
                   href="mailto:support@ashari.tech"
-                  className="text-rust hover:text-rust-hover "
+                  className="text-neon-orange hover:text-neon-orange/80 font-medium transition-colors"
                 >
                   support@ashari.tech
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="border-soft-gray bg-white">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <Github className="h-8 w-8 text-rust mx-auto mb-2" />
-                <CardTitle className="text-zinc-800">GitHub</CardTitle>
+                <div className="w-14 h-14 bg-gold-orange rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{boxShadow: "0 0 20px rgba(255, 179, 71, 0.5), 0 0 40px rgba(255, 179, 71, 0.3), 0 0 60px rgba(255, 179, 71, 0.1)"}}>
+                  <Github className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg text-text-primary">
+                  GitHub
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <a
                   href="https://github.com/asharitech"
-                  className="text-rust hover:text-rust-hover "
+                  className="text-gold-orange hover:text-gold-orange/80 font-medium transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   github.com/asharitech
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="border-soft-gray bg-white">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <Instagram className="h-8 w-8 text-rust mx-auto mb-2" />
-                <CardTitle className="text-zinc-800">Instagram</CardTitle>
+                <div className="w-14 h-14 bg-magenta-accent rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{boxShadow: "0 0 20px rgba(233, 75, 138, 0.5), 0 0 40px rgba(233, 75, 138, 0.3), 0 0 60px rgba(233, 75, 138, 0.1)"}}>
+                  <Instagram className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg text-text-primary">
+                  Instagram
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <a
                   href="https://instagram.com/ashari.tech"
-                  className="text-rust hover:text-rust-hover "
+                  className="text-magenta-accent hover:text-magenta-accent/80 font-medium transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   @ashari.tech
                 </a>
@@ -427,36 +476,41 @@ export default function Home() {
             </Card>
           </div>
 
-          <Button
-            className="bg-rust hover:bg-rust-hover text-white px-8 py-3"
-            size="lg"
-          >
+          <Button size="lg" className="btn-neon group text-white">
             Start Your Digital Journey
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="w-full px-4 sm:px-6 py-8 border-t border-soft-gray bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-rust rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
-              </div>
-              <div className="text-sm text-zinc-600">
-                <div className="font-semibold text-zinc-800">Ashari Tech</div>
-                <div className="text-xs">
-                  Revolutionizing the Future with AI
-                </div>
-              </div>
-            </div>
+      <footer className="relative w-full px-4 sm:px-6 py-12 glass-card rounded-t-3xl border-t border-glass-border overflow-hidden">
+        {/* Mesh pattern background */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="footer-mesh" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="40" y2="40" stroke="#FF9900" strokeWidth="0.5" />
+                <line x1="40" y1="0" x2="0" y2="40" stroke="#E94B8A" strokeWidth="0.5" />
+                <line x1="20" y1="0" x2="20" y2="40" stroke="#FFB347" strokeWidth="0.5" />
+                <line x1="0" y1="20" x2="40" y2="20" stroke="#FFB347" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#footer-mesh)" />
+          </svg>
+        </div>
+        
+        {/* Glowing accent line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-orange to-transparent opacity-50" />
+        
+        <div className="relative max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0">
+            <Logo size="sm" showText={true} glowIntensity="medium" />
             <div className="text-center sm:text-right">
-              <p className="text-sm text-zinc-600">
+              <p className="text-sm text-text-secondary">
                 © 2025 Ashari Tech. Made with ❤️ in Indonesia
               </p>
-              <p className="text-xs text-zinc-500 mt-1">
+              <p className="text-xs text-text-muted mt-1">
                 Building the future, one innovation at a time
               </p>
             </div>

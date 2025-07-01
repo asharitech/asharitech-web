@@ -24,18 +24,20 @@ import {
 
 export default function CMSDashboard() {
   return (
-    <div className="flex flex-1 flex-col gap-4">
+    <div className="flex flex-1 flex-col gap-6 p-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold">Dashboard Overview</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-3xl font-bold text-text-primary">
+            Dashboard Overview
+          </h2>
+          <p className="text-text-muted">
             Welcome back! Here's what's happening with your content.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline">
-            <BarChart3 className="h-4 w-4 mr-2" />
+        <div className="flex items-center gap-3">
+          <Button variant="glass">
+            <BarChart3 className="h-4 w-4 mr-2 text-electric-purple" />
             Export Report
           </Button>
           <Button>
@@ -46,79 +48,95 @@ export default function CMSDashboard() {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Content</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-semibold text-text-secondary">
+              Total Content
+            </CardTitle>
+            <div className="w-10 h-10 bg-electric-purple/10 rounded-lg flex items-center justify-center">
+              <FileText className="h-5 w-5 text-electric-purple" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">2,543</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-green-600 flex items-center">
-                <ArrowUpRight className="h-3 w-3 mr-1" />
+            <div className="text-3xl font-bold text-text-primary">2,543</div>
+            <p className="text-sm text-text-muted mt-1">
+              <span className="text-green-600 inline-flex items-center">
+                <ArrowUpRight className="h-4 w-4 mr-0.5" />
                 +12.5%
               </span>
-              from last month
+              <span className="text-text-muted"> from last month</span>
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Page Views</CardTitle>
-            <Eye className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-semibold text-text-secondary">
+              Page Views
+            </CardTitle>
+            <div className="w-10 h-10 bg-electric-blue/10 rounded-lg flex items-center justify-center">
+              <Eye className="h-5 w-5 text-electric-blue" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">45,231</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-green-600 flex items-center">
-                <ArrowUpRight className="h-3 w-3 mr-1" />
+            <div className="text-3xl font-bold text-text-primary">45,231</div>
+            <p className="text-sm text-text-muted mt-1">
+              <span className="text-green-600 inline-flex items-center">
+                <ArrowUpRight className="h-4 w-4 mr-0.5" />
                 +8.2%
               </span>
-              from last week
+              <span className="text-text-muted"> from last week</span>
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Users</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-semibold text-text-secondary">
+              Active Users
+            </CardTitle>
+            <div className="w-10 h-10 bg-vibrant-pink/10 rounded-lg flex items-center justify-center">
+              <Users className="h-5 w-5 text-vibrant-pink" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">1,234</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-red-600 flex items-center">
-                <ArrowDownRight className="h-3 w-3 mr-1" />
+            <div className="text-3xl font-bold text-text-primary">1,234</div>
+            <p className="text-sm text-text-muted mt-1">
+              <span className="text-red-600 inline-flex items-center">
+                <ArrowDownRight className="h-4 w-4 mr-0.5" />
                 -2.1%
               </span>
-              from yesterday
+              <span className="text-text-muted"> from yesterday</span>
             </p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="glass-card border-0 hover:shadow-lg transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Conversion Rate</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-semibold text-text-secondary">
+              Conversion Rate
+            </CardTitle>
+            <div className="w-10 h-10 bg-warm-yellow/10 rounded-lg flex items-center justify-center">
+              <TrendingUp className="h-5 w-5 text-warm-yellow" />
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">12.3%</div>
-            <p className="text-xs text-muted-foreground">
-              <span className="text-green-600 flex items-center">
-                <ArrowUpRight className="h-3 w-3 mr-1" />
+            <div className="text-3xl font-bold text-text-primary">12.3%</div>
+            <p className="text-sm text-text-muted mt-1">
+              <span className="text-green-600 inline-flex items-center">
+                <ArrowUpRight className="h-4 w-4 mr-0.5" />
                 +3.2%
               </span>
-              from last month
+              <span className="text-text-muted"> from last month</span>
             </p>
           </CardContent>
         </Card>
       </div>
 
       {/* Content Tabs */}
-      <Tabs defaultValue="overview" className="space-y-4">
-        <TabsList>
+      <Tabs defaultValue="overview" className="space-y-6">
+        <TabsList className="glass-card border-0">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="content">Content</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
@@ -128,10 +146,12 @@ export default function CMSDashboard() {
         <TabsContent value="overview" className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             {/* Recent Content */}
-            <Card className="col-span-4">
+            <Card className="col-span-4 glass-card border-0">
               <CardHeader>
-                <CardTitle>Recent Content</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl text-text-primary">
+                  Recent Content
+                </CardTitle>
+                <CardDescription className="text-text-muted">
                   Your latest published content and their performance.
                 </CardDescription>
               </CardHeader>
@@ -169,7 +189,7 @@ export default function CMSDashboard() {
                   ].map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-3 rounded-lg border"
+                      className="flex items-center justify-between p-4 rounded-xl glass-card border-0 hover:shadow-md transition-all"
                     >
                       <div className="space-y-1">
                         <p className="text-sm font-medium leading-none">
@@ -181,7 +201,9 @@ export default function CMSDashboard() {
                           </Badge>
                           <Badge
                             variant={
-                              item.status === "Published" ? "default" : "outline"
+                              item.status === "Published"
+                                ? "default"
+                                : "outline"
                             }
                             className="text-xs"
                           >
@@ -190,7 +212,9 @@ export default function CMSDashboard() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-medium">{item.views} views</p>
+                        <p className="text-sm font-medium">
+                          {item.views} views
+                        </p>
                         <p className="text-xs text-muted-foreground">
                           {item.date}
                         </p>
@@ -202,10 +226,12 @@ export default function CMSDashboard() {
             </Card>
 
             {/* Quick Stats */}
-            <Card className="col-span-3">
+            <Card className="col-span-3 glass-card border-0">
               <CardHeader>
-                <CardTitle>Quick Stats</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl text-text-primary">
+                  Quick Stats
+                </CardTitle>
+                <CardDescription className="text-text-muted">
                   Key metrics for your content performance.
                 </CardDescription>
               </CardHeader>
@@ -218,7 +244,7 @@ export default function CMSDashboard() {
                     </div>
                     <span className="text-sm font-medium">85%</span>
                   </div>
-                  <Progress value={85} className="h-2" />
+                  <Progress value={85} className="h-2 bg-electric-blue/20" />
                 </div>
 
                 <div className="space-y-2">
@@ -229,7 +255,7 @@ export default function CMSDashboard() {
                     </div>
                     <span className="text-sm font-medium">72%</span>
                   </div>
-                  <Progress value={72} className="h-2" />
+                  <Progress value={72} className="h-2 bg-green-500/20" />
                 </div>
 
                 <div className="space-y-2">
@@ -240,7 +266,7 @@ export default function CMSDashboard() {
                     </div>
                     <span className="text-sm font-medium">91%</span>
                   </div>
-                  <Progress value={91} className="h-2" />
+                  <Progress value={91} className="h-2 bg-orange-500/20" />
                 </div>
 
                 <div className="space-y-2">
@@ -251,7 +277,7 @@ export default function CMSDashboard() {
                     </div>
                     <span className="text-sm font-medium">68%</span>
                   </div>
-                  <Progress value={68} className="h-2" />
+                  <Progress value={68} className="h-2 bg-purple-500/20" />
                 </div>
               </CardContent>
             </Card>

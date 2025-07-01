@@ -2,8 +2,12 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DataTable, selectColumn, actionsColumn } from "@/components/ui/data-table";
-import { ColumnDef } from "@tanstack/react-table";
+import {
+  DataTable,
+  selectColumn,
+  actionsColumn,
+} from "@/components/ui/data-table";
+import type { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, Plus, FileText } from "lucide-react";
 
 // Sample data type
@@ -99,8 +103,8 @@ export default function PostsPage() {
               status === "published"
                 ? "default"
                 : status === "draft"
-                ? "secondary"
-                : "outline"
+                  ? "secondary"
+                  : "outline"
             }
           >
             {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -168,9 +172,7 @@ export default function PostsPage() {
       cell: ({ row }) => {
         const views = row.getValue("views") as number;
         return (
-          <div className="text-right font-medium">
-            {views.toLocaleString()}
-          </div>
+          <div className="text-right font-medium">{views.toLocaleString()}</div>
         );
       },
     },
