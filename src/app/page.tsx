@@ -35,10 +35,10 @@ function HomeContent() {
   const { isOpen, toggleMenu, closeMenu } = useMobileNav();
 
   return (
-    <main className="min-h-screen relative overflow-hidden pt-20 sm:pt-24">
+    <main className="min-h-screen relative overflow-hidden pt-16 sm:pt-20">
       {/* Navigation */}
       <nav
-        className="fixed top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-3 sm:py-4 glass-card border-b-0 rounded-b-2xl backdrop-blur-xl"
+        className="fixed top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-2 sm:py-3 glass-card border-b-0 rounded-b-2xl backdrop-blur-xl"
         aria-label="Main navigation"
         style={{
           backdropFilter: 'blur(16px)',

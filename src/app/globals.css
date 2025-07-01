@@ -405,7 +405,7 @@
   }
 
   .animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
+    animation: pulse-slow 4s ease-in-out infinite;
   }
 
   .animate-slide-in-right {
@@ -413,9 +413,9 @@
   }
 
   .animate-stagger-fade-in {
-    animation: staggerFadeIn 0.4s ease-out;
+    animation: staggerFadeIn 0.3s ease-out;
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(15px);
   }
 
   .animate-menu-button-rotate {
@@ -509,11 +509,11 @@
       left: 0;
       right: 0;
       z-index: 40;
-      padding-top: calc(env(safe-area-inset-top) + 0.75rem);
-      padding-bottom: 0.75rem;
+      padding-top: calc(env(safe-area-inset-top) + 0.5rem);
+      padding-bottom: 0.5rem;
       padding-left: max(1rem, env(safe-area-inset-left));
       padding-right: max(1rem, env(safe-area-inset-right));
-      min-height: calc(70px + env(safe-area-inset-top));
+      min-height: calc(60px + env(safe-area-inset-top));
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid rgba(255, 153, 0, 0.1);
@@ -540,18 +540,18 @@
     /* Enhanced menu animations */
     [id="mobile-menu"] {
       will-change: transform;
+      contain: layout style paint;
     }
 
     /* Menu panel glass effect enhancement */
     [id="mobile-menu"] .glass-card {
       background: rgba(24, 18, 36, 0.95);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-left: 2px solid rgba(255, 153, 0, 0.2);
       box-shadow: 
-        -10px 0 40px rgba(0, 0, 0, 0.3),
-        -5px 0 20px rgba(255, 153, 0, 0.1),
-        inset 1px 0 0 rgba(255, 153, 0, 0.1);
+        -10px 0 30px rgba(0, 0, 0, 0.2),
+        -5px 0 15px rgba(255, 153, 0, 0.1);
     }
   }
 

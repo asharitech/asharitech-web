@@ -27,14 +27,14 @@ export function MobileMenuButton({ isOpen, onClick, className }: MobileMenuButto
       <div className="relative">
         <Menu 
           className={cn(
-            "h-6 w-6 text-neon-orange transition-all duration-300 ease-out",
-            isOpen ? "rotate-90 opacity-0 scale-75" : "rotate-0 opacity-100 scale-100"
+            "h-6 w-6 text-neon-orange transition-all duration-200 ease-out",
+            isOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
           )} 
         />
         <X 
           className={cn(
-            "h-6 w-6 text-neon-orange absolute inset-0 transition-all duration-300 ease-out",
-            isOpen ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-75"
+            "h-6 w-6 text-neon-orange absolute inset-0 transition-all duration-200 ease-out",
+            isOpen ? "rotate-0 opacity-100" : "rotate-45 opacity-0"
           )} 
         />
       </div>

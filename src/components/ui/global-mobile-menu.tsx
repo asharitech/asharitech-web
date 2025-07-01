@@ -54,7 +54,7 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
     <>
       {/* Full Screen Overlay with Backdrop Blur */}
       <div
-        className="fixed inset-0 bg-black/70 backdrop-blur-md transition-all duration-500 ease-out z-[90]"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-all duration-300 ease-out z-[90]"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -62,7 +62,10 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
       {/* Mobile Menu Panel - Slide from Right */}
       <div
         id="mobile-menu"
-        className="fixed top-0 right-0 h-full w-80 max-w-[90vw] z-[100] animate-slide-in-right"
+        className={cn(
+          "fixed top-0 right-0 h-full w-80 max-w-[90vw] z-[100] transition-transform duration-300 ease-out",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-menu-title"
@@ -120,7 +123,7 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
                   "animate-stagger-fade-in"
                 )}
                 style={{
-                  animationDelay: `${index * 100 + 200}ms`,
+                  animationDelay: `${index * 50 + 100}ms`,
                   animationFillMode: 'both'
                 }}
                 aria-label={item.ariaLabel}
