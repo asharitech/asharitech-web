@@ -15,6 +15,7 @@ import { MobileMenuButton } from "@/components/ui/mobile-menu-button";
 import { GlobalMobileMenu } from "@/components/ui/global-mobile-menu";
 import { MobileNavProvider, useMobileNav } from "@/contexts/mobile-nav-context";
 import Logo from "@/components/logo";
+import { PatternToggle } from "@/components/ui/pattern-toggle";
 import {
   ArrowRight,
   Users,
@@ -41,39 +42,46 @@ function HomeContent() {
         className="fixed top-0 left-0 right-0 z-40 w-full px-4 sm:px-6 py-2 sm:py-3 glass-card border-b-0 rounded-b-2xl backdrop-blur-xl"
         aria-label="Main navigation"
         style={{
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
         }}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center min-h-[56px]">
           <Logo size="md" showText={true} glowIntensity="high" />
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#about"
-              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors min-h-[44px] min-w-[44px] px-4 py-3 inline-flex items-center"
               aria-label="Learn about Ashari Tech"
             >
               About
             </a>
             <a
               href="#products"
-              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors min-h-[44px] min-w-[44px] px-4 py-3 inline-flex items-center"
               aria-label="View our products"
             >
               Products
             </a>
             <a
               href="#goals"
-              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors min-h-[44px] min-w-[44px] px-4 py-3 inline-flex items-center"
               aria-label="Our company goals"
             >
               Goals
             </a>
             <a
+              href="#testimonials"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors min-h-[44px] min-w-[44px] px-4 py-3 inline-flex items-center"
+              aria-label="Client testimonials"
+            >
+              Success Stories
+            </a>
+            <a
               href="#contact"
-              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors touch-target"
+              className="text-base font-medium text-text-secondary hover:text-neon-orange transition-colors min-h-[44px] min-w-[44px] px-4 py-3 inline-flex items-center"
               aria-label="Contact us"
             >
               Contact
@@ -115,15 +123,23 @@ function HomeContent() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <Button asChild size="lg" className="btn-neon group text-white touch-target">
+            <Button asChild size="lg" className="btn-neon group text-black">
               <a href="#products" className="w-full sm:w-auto">
-                <CircuitBoard className="w-4 h-4 text-neon-orange" />
+                <CircuitBoard className="w-4 h-4 text-white drop-shadow-[0_0_4px_rgba(255,159,28,0.8)]" />
                 Explore Our Products
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 touch-target">
-              <a href="#about" className="w-full sm:w-auto">Learn More</a>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="neon-border hover:bg-neon-orange/10 group"
+            >
+              <a href="#about" className="w-full sm:w-auto">
+                Learn About Our Mission
+                <ArrowRight className="ml-1 h-4 w-4 text-neon-orange transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </div>
         </div>
@@ -161,11 +177,17 @@ function HomeContent() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300 mobile-card-spacing">
               <CardHeader>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
+                  }}
+                >
                   <Target className="h-7 w-7 text-white" aria-hidden="true" />
                 </div>
                 <CardTitle className="text-xl sm:text-2xl text-text-primary">
-                  Our Vision
+                  Our Vision for Indonesia's Digital Future
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -180,14 +202,20 @@ function HomeContent() {
 
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300 mobile-card-spacing">
               <CardHeader>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
+                  }}
+                >
                   <Lightbulb
                     className="h-7 w-7 text-white"
                     aria-hidden="true"
                   />
                 </div>
                 <CardTitle className="text-xl sm:text-2xl text-text-primary">
-                  Our Mission
+                  Our Mission to Empower Through Technology
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -228,10 +256,22 @@ function HomeContent() {
 
           <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
             <Card className="glass-card border-0 hover:shadow-2xl transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-10 blur-3xl" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}} />
+              <div
+                className="absolute top-0 right-0 w-64 h-64 opacity-10 blur-3xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
+                }}
+              />
               <CardHeader className="relative">
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{background: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)"}}>
+                  <div
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
+                    }}
+                  >
                     <Bot className="h-10 w-10 text-white" />
                   </div>
                   <div>
@@ -255,25 +295,25 @@ function HomeContent() {
                 <div className="flex flex-wrap gap-3 mb-8">
                   <Badge
                     variant="secondary"
-                    className="px-4 py-1.5 bg-neon-orange/10 text-neon-orange border border-neon-orange/30"
+                    className="px-4 py-1.5 bg-neon-orange/10 text-neon-orange border border-neon-orange/30 font-semibold text-sm"
                   >
                     24/7 Available
                   </Badge>
                   <Badge
                     variant="secondary"
-                    className="px-4 py-1.5 bg-gold-orange/10 text-gold-orange border border-gold-orange/30"
+                    className="px-4 py-1.5 bg-gold-orange/10 text-gold-orange border border-gold-orange/30 font-semibold text-sm"
                   >
                     Educational AI
                   </Badge>
                   <Badge
                     variant="secondary"
-                    className="px-4 py-1.5 bg-magenta-accent/10 text-magenta-accent border border-magenta-accent/30"
+                    className="px-4 py-1.5 bg-magenta-accent/10 text-magenta-accent border border-magenta-accent/30 font-semibold text-sm"
                   >
                     Multi-platform
                   </Badge>
                   <Badge
                     variant="secondary"
-                    className="px-4 py-1.5 bg-bright-purple/10 text-bright-purple border border-bright-purple/30"
+                    className="px-4 py-1.5 bg-bright-purple/10 text-bright-purple border border-bright-purple/30 font-semibold text-sm"
                   >
                     Indonesian Language
                   </Badge>
@@ -283,7 +323,7 @@ function HomeContent() {
                   <Button
                     asChild
                     size="lg"
-                    className="btn-neon group text-white touch-target"
+                    className="btn-neon group text-black"
                   >
                     <a
                       href="https://t.me/brainybuddybot"
@@ -291,21 +331,26 @@ function HomeContent() {
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto"
                     >
-                      <Link2 className="mr-2 h-4 w-4" />
-                      Chat di Telegram
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <Link2 className="mr-2 h-4 w-4 text-white drop-shadow-[0_0_4px_rgba(255,159,28,0.8)]" />
+                      Start Learning on Telegram
+                      <ArrowRight className="ml-1 h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="neon-border hover:bg-neon-orange/10 group touch-target">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="neon-border hover:bg-neon-orange/10 group"
+                  >
                     <a
                       href="https://line.me/R/ti/p/@125nkjfl"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto"
                     >
-                      <Link2 className="mr-2 h-4 w-4" />
-                      Chat di LINE
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <Link2 className="mr-2 h-4 w-4 text-neon-orange" />
+                      Start Learning on LINE
+                      <ArrowRight className="ml-1 h-4 w-4 text-neon-orange transition-transform group-hover:translate-x-1" />
                     </a>
                   </Button>
                 </div>
@@ -390,7 +435,10 @@ function HomeContent() {
                 <CardHeader>
                   <div
                     className={`w-14 h-14 ${goal.color} rounded-xl flex items-center justify-center mb-4`}
-                    style={{boxShadow: "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)"}}
+                    style={{
+                      boxShadow:
+                        "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)",
+                    }}
                   >
                     <goal.icon className="h-7 w-7 text-white" />
                   </div>
@@ -409,8 +457,136 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* Divider between Goals and Contact */}
+      {/* Divider between Goals and Testimonials */}
       <SectionDivider variant="wave" color="orange" />
+
+      {/* Testimonials Section */}
+      <section
+        id="testimonials"
+        className="relative mobile-spacing py-16 sm:py-24"
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2
+              id="testimonials-heading"
+              className="text-4xl sm:text-5xl font-bold text-text-primary mb-4"
+            >
+              Trusted by Indonesian Innovators
+            </h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+              See how Indonesian businesses and students are transforming with
+              our AI solutions.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-neon-orange/20 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-neon-orange" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-primary">
+                      PT Digital Maju
+                    </h3>
+                    <p className="text-sm text-text-muted">
+                      E-commerce Platform
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-text-secondary italic mb-4">
+                  "Ashari Tech's AI solutions helped us increase customer
+                  engagement by 45% and reduce operational costs by 30%. Their
+                  team truly understands Indonesian market needs."
+                </p>
+                <p className="text-sm font-semibold text-neon-orange">
+                  - Budi Santoso, CEO
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gold-orange/20 flex items-center justify-center">
+                    <Bot className="h-6 w-6 text-gold-orange" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-primary">
+                      Sarah Wijaya
+                    </h3>
+                    <p className="text-sm text-text-muted">
+                      University Student
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-text-secondary italic mb-4">
+                  "Brainy Buddy has been a game-changer for my studies. It
+                  understands Indonesian curriculum perfectly and helps me
+                  prepare for UTBK. My grades improved significantly!"
+                </p>
+                <p className="text-sm font-semibold text-gold-orange">
+                  - Computer Science, UI
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-magenta-accent/20 flex items-center justify-center">
+                    <Target className="h-6 w-6 text-magenta-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-primary">
+                      CV Kreatif Nusantara
+                    </h3>
+                    <p className="text-sm text-text-muted">Creative Agency</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-text-secondary italic mb-4">
+                  "The AI tools from Ashari Tech transformed our creative
+                  process. We can now deliver projects 2x faster while
+                  maintaining quality. Highly recommended for Indonesian SMEs!"
+                </p>
+                <p className="text-sm font-semibold text-magenta-accent">
+                  - Rina Prasetyo, Founder
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-8 flex-wrap justify-center">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-neon-orange">500+</p>
+                <p className="text-sm text-text-muted">
+                  Businesses Transformed
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-gold-orange">50,000+</p>
+                <p className="text-sm text-text-muted">Students Helped</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-magenta-accent">98%</p>
+                <p className="text-sm text-text-muted">Customer Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider between Testimonials and Contact */}
+      <SectionDivider variant="angular" color="gold" />
 
       {/* Contact Section */}
       <section
@@ -426,15 +602,20 @@ function HomeContent() {
             Get in Touch
           </h2>
           <p className="text-text-secondary text-lg mb-12 max-w-2xl mx-auto">
-            Ready to revolutionize your business with AI and technology? Let's
-            build the future together.
+            Join 500+ Indonesian businesses already transforming with our AI
+            solutions. Start your digital transformation journey today.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-14 h-14 bg-neon-orange rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{boxShadow: "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)"}}>
+                <div
+                  className="w-14 h-14 bg-neon-orange rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{
+                    boxShadow:
+                      "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)",
+                  }}
+                >
                   <Mail className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-lg text-text-primary">
@@ -453,8 +634,13 @@ function HomeContent() {
 
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-14 h-14 bg-gold-orange rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{boxShadow: "0 0 20px rgba(255, 179, 71, 0.5), 0 0 40px rgba(255, 179, 71, 0.3), 0 0 60px rgba(255, 179, 71, 0.1)"}}>
+                <div
+                  className="w-14 h-14 bg-gold-orange rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{
+                    boxShadow:
+                      "0 0 20px rgba(255, 179, 71, 0.5), 0 0 40px rgba(255, 179, 71, 0.3), 0 0 60px rgba(255, 179, 71, 0.1)",
+                  }}
+                >
                   <Github className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-lg text-text-primary">
@@ -475,8 +661,13 @@ function HomeContent() {
 
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center">
-                <div className="w-14 h-14 bg-magenta-accent rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{boxShadow: "0 0 20px rgba(233, 75, 138, 0.5), 0 0 40px rgba(233, 75, 138, 0.3), 0 0 60px rgba(233, 75, 138, 0.1)"}}>
+                <div
+                  className="w-14 h-14 bg-magenta-accent rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{
+                    boxShadow:
+                      "0 0 20px rgba(233, 75, 138, 0.5), 0 0 40px rgba(233, 75, 138, 0.3), 0 0 60px rgba(233, 75, 138, 0.1)",
+                  }}
+                >
                   <Instagram className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-lg text-text-primary">
@@ -496,9 +687,12 @@ function HomeContent() {
             </Card>
           </div>
 
-          <Button size="lg" className="btn-neon group text-white touch-target">
-            <span>Start Your Digital Journey</span>
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button asChild size="lg" className="btn-neon group text-black">
+            <a href="mailto:support@ashari.tech">
+              <Mail className="mr-2 h-4 w-4 text-white drop-shadow-[0_0_4px_rgba(255,159,28,0.8)]" />
+              <span>Get Started with Free Consultation</span>
+              <ArrowRight className="ml-2 h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
         </div>
       </section>
@@ -509,20 +703,55 @@ function HomeContent() {
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="footer-mesh" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="0" x2="40" y2="40" stroke="#FF9900" strokeWidth="0.5" />
-                <line x1="40" y1="0" x2="0" y2="40" stroke="#E94B8A" strokeWidth="0.5" />
-                <line x1="20" y1="0" x2="20" y2="40" stroke="#FFB347" strokeWidth="0.5" />
-                <line x1="0" y1="20" x2="40" y2="20" stroke="#FFB347" strokeWidth="0.5" />
+              <pattern
+                id="footer-mesh"
+                x="0"
+                y="0"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="40"
+                  y2="40"
+                  stroke="#FF9900"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="40"
+                  y1="0"
+                  x2="0"
+                  y2="40"
+                  stroke="#E94B8A"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="20"
+                  y1="0"
+                  x2="20"
+                  y2="40"
+                  stroke="#FFB347"
+                  strokeWidth="0.5"
+                />
+                <line
+                  x1="0"
+                  y1="20"
+                  x2="40"
+                  y2="20"
+                  stroke="#FFB347"
+                  strokeWidth="0.5"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#footer-mesh)" />
           </svg>
         </div>
-        
+
         {/* Glowing accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-orange to-transparent opacity-50" />
-        
+
         <div className="relative max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0">
             <Logo size="sm" showText={true} glowIntensity="medium" />
@@ -540,6 +769,9 @@ function HomeContent() {
 
       {/* Global Mobile Menu */}
       <GlobalMobileMenu isOpen={isOpen} onClose={closeMenu} />
+
+      {/* Pattern Toggle for Accessibility */}
+      <PatternToggle />
     </main>
   );
 }

@@ -25,23 +25,25 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title:
-    "Ashari Tech - Revolutionizing Indonesia's Future with AI and Technology",
+    "Ashari Tech - AI Solutions for Indonesian Businesses & Education | Transform with AI",
   description:
-    "Ashari Tech harnesses cutting-edge AI and technology to transform Indonesia's landscape, empowering SMEs, enhancing lives, and building a more connected, prosperous future. Meet Brainy Buddy, our AI assistant for learning.",
+    "Join 500+ Indonesian businesses using Ashari Tech's AI solutions. From SME digital transformation to Brainy Buddy's 24/7 AI tutoring for students. Start your free consultation today.",
   keywords: [
     "Ashari Tech",
-    "AI Indonesia",
-    "artificial intelligence",
-    "technology Indonesia",
-    "SME empowerment",
-    "digital transformation",
-    "Brainy Buddy",
-    "AI assistant",
-    "machine learning",
-    "innovation hub",
-    "startup Indonesia",
-    "teknologi Indonesia",
-    "kecerdasan buatan",
+    "AI solutions Indonesia",
+    "artificial intelligence Indonesia",
+    "AI for SME Indonesia",
+    "digital transformation Indonesia",
+    "Brainy Buddy AI tutor",
+    "AI pembelajaran Indonesia",
+    "AI assistant belajar",
+    "teknologi AI Indonesia",
+    "kecerdasan buatan bisnis",
+    "AI education platform",
+    "Indonesian AI company",
+    "AI consulting Indonesia",
+    "transformasi digital UKM",
+    "solusi AI untuk bisnis",
   ],
   authors: [{ name: "Ashari Tech" }],
   creator: "Ashari Tech",
@@ -182,10 +184,21 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#181224" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181224" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#181224" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#181224"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#181224"
+        />
         <meta name="msapplication-TileColor" content="#181224" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="viewport"
@@ -195,6 +208,9 @@ export default function RootLayout({
       <body
         className={`antialiased ${spaceGrotesk.variable} ${inter.variable} ${montserrat.variable}`}
       >
+        <a href="#main-content" className="skip-link sr-only-focusable">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

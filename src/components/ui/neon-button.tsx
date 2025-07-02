@@ -11,7 +11,16 @@ interface NeonButtonProps extends ButtonProps {
 }
 
 const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
-  ({ className, children, neonColor = "orange", pulseAnimation = true, ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      neonColor = "orange",
+      pulseAnimation = true,
+      ...props
+    },
+    ref,
+  ) => {
     const colorMap = {
       orange: {
         primary: "#FF9900",
@@ -52,10 +61,12 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
           className="absolute inset-0 rounded-lg opacity-75 blur-xl"
           style={{
             background: `radial-gradient(circle, ${colors.glow} 0%, transparent 70%)`,
-            animation: pulseAnimation ? "pulse 2s ease-in-out infinite" : "none",
+            animation: pulseAnimation
+              ? "pulse 2s ease-in-out infinite"
+              : "none",
           }}
         />
-        
+
         {/* Button */}
         <Button
           ref={ref}
@@ -66,7 +77,7 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
             "hover:before:opacity-100",
             "after:absolute after:inset-0 after:-z-20",
             "after:bg-gradient-to-r after:opacity-20",
-            className
+            className,
           )}
           style={{
             borderColor: colors.primary,
@@ -95,10 +106,10 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
               ease: "linear",
             }}
           />
-          
+
           {/* Content */}
           <span className="relative z-10">{children}</span>
-          
+
           {/* Hover effect overlay */}
           <motion.div
             className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
@@ -109,7 +120,7 @@ const NeonButton = forwardRef<HTMLButtonElement, NeonButtonProps>(
         </Button>
       </motion.div>
     );
-  }
+  },
 );
 
 NeonButton.displayName = "NeonButton";

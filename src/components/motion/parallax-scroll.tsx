@@ -25,7 +25,7 @@ export function ParallaxScroll({
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    [offset - 100 * speed, offset + 100 * speed]
+    [offset - 100 * speed, offset + 100 * speed],
   );
 
   return (

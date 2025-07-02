@@ -23,7 +23,7 @@ export function FloatingIcons({ icons, className }: FloatingIconsProps) {
         const randomX = Math.random() * 100;
         const randomY = Math.random() * 100;
         const randomRotation = Math.random() * 360;
-        
+
         return (
           <motion.div
             key={index}
@@ -92,13 +92,13 @@ export function OrbitingIcons({
     <div className={cn("relative", className)}>
       {/* Center content */}
       <div className="relative z-10">{children}</div>
-      
+
       {/* Orbiting icons */}
       {icons.map((item, index) => {
         const Icon = item.icon;
         const angle = (360 / icons.length) * index;
         const delay = (duration / icons.length) * index;
-        
+
         return (
           <motion.div
             key={index}

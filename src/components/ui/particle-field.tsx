@@ -70,11 +70,11 @@ export function ParticleField({
     const handleResize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-      
+
       // Reinitialize particles on resize
       particlesRef.current = Array.from(
         { length: particleCount },
-        () => new Particle(canvas)
+        () => new Particle(canvas),
       );
     };
 
@@ -96,7 +96,7 @@ export function ParticleField({
           const p1 = particlesRef.current[i];
           const p2 = particlesRef.current[j];
           const distance = Math.sqrt(
-            Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2)
+            (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2,
           );
 
           if (distance < maxDistance) {
@@ -104,7 +104,12 @@ export function ParticleField({
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = lineColor.replace("30", Math.floor(opacity * 30).toString(16).padStart(2, "0"));
+            ctx.strokeStyle = lineColor.replace(
+              "30",
+              Math.floor(opacity * 30)
+                .toString(16)
+                .padStart(2, "0"),
+            );
             ctx.lineWidth = opacity * 2;
             ctx.stroke();
           }

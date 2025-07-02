@@ -29,13 +29,27 @@ export function SectionDivider({
             viewBox="0 0 1200 100"
           >
             <defs>
-              <linearGradient id={`mesh-gradient-${color}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id={`mesh-gradient-${color}`}
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor={selectedColor} stopOpacity="0" />
-                <stop offset="50%" stopColor={selectedColor} stopOpacity="0.3" />
+                <stop
+                  offset="50%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.3"
+                />
                 <stop offset="100%" stopColor={selectedColor} stopOpacity="0" />
               </linearGradient>
             </defs>
-            <g stroke={`url(#mesh-gradient-${color})`} strokeWidth="1" fill="none">
+            <g
+              stroke={`url(#mesh-gradient-${color})`}
+              strokeWidth="1"
+              fill="none"
+            >
               {/* Mesh pattern */}
               {Array.from({ length: 20 }).map((_, i) => (
                 <line
@@ -82,10 +96,24 @@ export function SectionDivider({
             viewBox="0 0 1200 64"
           >
             <defs>
-              <linearGradient id={`angular-gradient-${color}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id={`angular-gradient-${color}`}
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor={selectedColor} stopOpacity="0.1" />
-                <stop offset="50%" stopColor={selectedColor} stopOpacity="0.5" />
-                <stop offset="100%" stopColor={selectedColor} stopOpacity="0.1" />
+                <stop
+                  offset="50%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.5"
+                />
+                <stop
+                  offset="100%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.1"
+                />
               </linearGradient>
             </defs>
             <path
@@ -116,11 +144,29 @@ export function SectionDivider({
             viewBox="0 0 1200 80"
           >
             <defs>
-              <linearGradient id={`wave-gradient-${color}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id={`wave-gradient-${color}`}
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor={selectedColor} stopOpacity="0" />
-                <stop offset="25%" stopColor={selectedColor} stopOpacity="0.3" />
-                <stop offset="50%" stopColor={selectedColor} stopOpacity="0.5" />
-                <stop offset="75%" stopColor={selectedColor} stopOpacity="0.3" />
+                <stop
+                  offset="25%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.3"
+                />
+                <stop
+                  offset="50%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.5"
+                />
+                <stop
+                  offset="75%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.3"
+                />
                 <stop offset="100%" stopColor={selectedColor} stopOpacity="0" />
               </linearGradient>
             </defs>
@@ -131,7 +177,13 @@ export function SectionDivider({
               fill="none"
               className="drop-shadow-[0_0_15px_rgba(255,153,0,0.6)]"
             />
-            <circle cx="600" cy="40" r="4" fill={selectedColor} className="animate-pulse" />
+            <circle
+              cx="600"
+              cy="40"
+              r="4"
+              fill={selectedColor}
+              className="animate-pulse"
+            />
           </svg>
         </div>
       );
@@ -145,13 +197,31 @@ export function SectionDivider({
             viewBox="0 0 1200 64"
           >
             <defs>
-              <linearGradient id={`polygon-gradient-${color}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id={`polygon-gradient-${color}`}
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor={selectedColor} stopOpacity="0.1" />
-                <stop offset="50%" stopColor={selectedColor} stopOpacity="0.4" />
-                <stop offset="100%" stopColor={selectedColor} stopOpacity="0.1" />
+                <stop
+                  offset="50%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.4"
+                />
+                <stop
+                  offset="100%"
+                  stopColor={selectedColor}
+                  stopOpacity="0.1"
+                />
               </linearGradient>
             </defs>
-            <g fill="none" stroke={`url(#polygon-gradient-${color})`} strokeWidth="1.5">
+            <g
+              fill="none"
+              stroke={`url(#polygon-gradient-${color})`}
+              strokeWidth="1.5"
+            >
               {/* Hexagon pattern */}
               {Array.from({ length: 10 }).map((_, i) => (
                 <polygon
@@ -163,7 +233,14 @@ export function SectionDivider({
               ))}
             </g>
             {/* Center accent */}
-            <circle cx="600" cy="32" r="6" fill={selectedColor} opacity="0.6" className="animate-pulse" />
+            <circle
+              cx="600"
+              cy="32"
+              r="6"
+              fill={selectedColor}
+              opacity="0.6"
+              className="animate-pulse"
+            />
           </svg>
         </div>
       );

@@ -142,7 +142,7 @@ export function Cube3D({
 
       {/* Inner glow core */}
       {variant === "neon" && (
-        <div 
+        <div
           className="absolute inset-4 rounded blur-xl"
           style={{
             background: `radial-gradient(circle, ${colors.glow} 0%, transparent 70%)`,
@@ -156,38 +156,38 @@ export function Cube3D({
 export function CubeCluster({ className }: { className?: string }) {
   return (
     <div className={cn("relative", className)}>
-      <Cube3D 
-        size={60} 
-        className="absolute top-0 left-0" 
-        delay={0} 
+      <Cube3D
+        size={60}
+        className="absolute top-0 left-0"
+        delay={0}
         variant="neon"
         color="orange"
       />
-      <Cube3D 
-        size={80} 
-        className="absolute top-12 left-16" 
-        delay={1} 
+      <Cube3D
+        size={80}
+        className="absolute top-12 left-16"
+        delay={1}
         variant="wireframe"
         color="magenta"
       />
-      <Cube3D 
-        size={50} 
-        className="absolute top-0 left-32" 
-        delay={2} 
+      <Cube3D
+        size={50}
+        className="absolute top-0 left-32"
+        delay={2}
         variant="glass"
         color="purple"
       />
-      <Cube3D 
-        size={70} 
-        className="absolute top-20 left-8" 
-        delay={0.5} 
+      <Cube3D
+        size={70}
+        className="absolute top-20 left-8"
+        delay={0.5}
         variant="neon"
         color="magenta"
       />
-      <Cube3D 
-        size={40} 
-        className="absolute top-8 left-24" 
-        delay={1.5} 
+      <Cube3D
+        size={40}
+        className="absolute top-8 left-24"
+        delay={1.5}
         variant="wireframe"
         color="orange"
       />
@@ -198,16 +198,63 @@ export function CubeCluster({ className }: { className?: string }) {
 // New geometric cube grid for background decoration
 export function GeometricCubeGrid({ className }: { className?: string }) {
   const cubes = [
-    { size: 30, x: "10%", y: "20%", delay: 0, variant: "wireframe" as const, color: "orange" as const },
-    { size: 40, x: "80%", y: "10%", delay: 0.5, variant: "neon" as const, color: "magenta" as const },
-    { size: 35, x: "20%", y: "70%", delay: 1, variant: "glass" as const, color: "purple" as const },
-    { size: 45, x: "70%", y: "60%", delay: 1.5, variant: "wireframe" as const, color: "orange" as const },
-    { size: 50, x: "50%", y: "40%", delay: 2, variant: "neon" as const, color: "magenta" as const },
-    { size: 25, x: "90%", y: "80%", delay: 2.5, variant: "glass" as const, color: "purple" as const },
+    {
+      size: 30,
+      x: "10%",
+      y: "20%",
+      delay: 0,
+      variant: "wireframe" as const,
+      color: "orange" as const,
+    },
+    {
+      size: 40,
+      x: "80%",
+      y: "10%",
+      delay: 0.5,
+      variant: "neon" as const,
+      color: "magenta" as const,
+    },
+    {
+      size: 35,
+      x: "20%",
+      y: "70%",
+      delay: 1,
+      variant: "glass" as const,
+      color: "purple" as const,
+    },
+    {
+      size: 45,
+      x: "70%",
+      y: "60%",
+      delay: 1.5,
+      variant: "wireframe" as const,
+      color: "orange" as const,
+    },
+    {
+      size: 50,
+      x: "50%",
+      y: "40%",
+      delay: 2,
+      variant: "neon" as const,
+      color: "magenta" as const,
+    },
+    {
+      size: 25,
+      x: "90%",
+      y: "80%",
+      delay: 2.5,
+      variant: "glass" as const,
+      color: "purple" as const,
+    },
   ];
 
   return (
-    <div className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}>
+    <div
+      className={cn(
+        "absolute inset-0 overflow-hidden pointer-events-none",
+        className,
+      )}
+    >
       {cubes.map((cube, index) => (
         <Cube3D
           key={index}

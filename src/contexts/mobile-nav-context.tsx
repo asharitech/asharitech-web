@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 interface MobileNavContextType {
   isOpen: boolean;
@@ -9,7 +9,9 @@ interface MobileNavContextType {
   openMenu: () => void;
 }
 
-const MobileNavContext = createContext<MobileNavContextType | undefined>(undefined);
+const MobileNavContext = createContext<MobileNavContextType | undefined>(
+  undefined,
+);
 
 export function MobileNavProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +21,9 @@ export function MobileNavProvider({ children }: { children: ReactNode }) {
   const openMenu = () => setIsOpen(true);
 
   return (
-    <MobileNavContext.Provider value={{ isOpen, toggleMenu, closeMenu, openMenu }}>
+    <MobileNavContext.Provider
+      value={{ isOpen, toggleMenu, closeMenu, openMenu }}
+    >
       {children}
     </MobileNavContext.Provider>
   );
@@ -28,7 +32,7 @@ export function MobileNavProvider({ children }: { children: ReactNode }) {
 export function useMobileNav() {
   const context = useContext(MobileNavContext);
   if (context === undefined) {
-    throw new Error('useMobileNav must be used within a MobileNavProvider');
+    throw new Error("useMobileNav must be used within a MobileNavProvider");
   }
   return context;
 }

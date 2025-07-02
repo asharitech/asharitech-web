@@ -16,7 +16,7 @@ export function HolographicCard({
   intensity = 0.15,
 }: HolographicCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -47,10 +47,7 @@ export function HolographicCard({
 
   return (
     <motion.div
-      className={cn(
-        "relative preserve-3d",
-        className
-      )}
+      className={cn("relative preserve-3d", className)}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
@@ -82,20 +79,20 @@ export function HolographicCard({
           opacity: isHovered ? 1 : 0,
         }}
       />
-      
+
       {/* Glass effect base */}
       <div className="relative glass-card rounded-2xl p-6 overflow-hidden">
         {/* Shine effect */}
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
-            background: `linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.1) 45%, transparent 100%)`,
+            background: "linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.1) 45%, transparent 100%)",
             transform: "translateX(-100%)",
             animation: isHovered ? "shine 0.8s ease-in-out" : "none",
             opacity: isHovered ? 1 : 0,
           }}
         />
-        
+
         {/* Content */}
         <div className="relative z-10">{children}</div>
       </div>

@@ -27,9 +27,12 @@ export function AnimatedGradient({
   const { opacity, blur } = intensityMap[intensity];
 
   const gradients = {
-    default: "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
-    radial: "radial-gradient(circle at 50% 50%, #FF9900 0%, #FF5700 30%, #E94B8A 60%, transparent 100%)",
-    conic: "conic-gradient(from 180deg at 50% 50%, #FF9900 0deg, #FF5700 90deg, #FFB347 180deg, #E94B8A 270deg, #FF9900 360deg)",
+    default:
+      "linear-gradient(135deg, #FF9900 0%, #FF5700 25%, #FFB347 50%, #E94B8A 75%, #FF9900 100%)",
+    radial:
+      "radial-gradient(circle at 50% 50%, #FF9900 0%, #FF5700 30%, #E94B8A 60%, transparent 100%)",
+    conic:
+      "conic-gradient(from 180deg at 50% 50%, #FF9900 0deg, #FF5700 90deg, #FFB347 180deg, #E94B8A 270deg, #FF9900 360deg)",
     mesh: `
       radial-gradient(at 40% 20%, #FF9900 0px, transparent 50%),
       radial-gradient(at 80% 0%, #E94B8A 0px, transparent 50%),

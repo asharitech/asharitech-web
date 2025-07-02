@@ -16,36 +16,41 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
     { href: "#about", label: "About", ariaLabel: "Learn about Ashari Tech" },
     { href: "#products", label: "Products", ariaLabel: "View our products" },
     { href: "#goals", label: "Goals", ariaLabel: "Our company goals" },
+    {
+      href: "#testimonials",
+      label: "Success Stories",
+      ariaLabel: "Client testimonials",
+    },
     { href: "#contact", label: "Contact", ariaLabel: "Contact us" },
   ];
 
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('menu-open');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add("menu-open");
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.classList.remove('menu-open');
-      document.body.style.overflow = '';
+      document.body.classList.remove("menu-open");
+      document.body.style.overflow = "";
     }
 
     // Cleanup on unmount
     return () => {
-      document.body.classList.remove('menu-open');
-      document.body.style.overflow = '';
+      document.body.classList.remove("menu-open");
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   // Handle escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (e.key === "Escape" && isOpen) {
         onClose();
       }
     };
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
@@ -64,7 +69,7 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
         id="mobile-menu"
         className={cn(
           "fixed top-0 right-0 h-full w-80 max-w-[90vw] z-[100] transition-transform duration-300 ease-out",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full",
         )}
         role="dialog"
         aria-modal="true"
@@ -72,14 +77,13 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
       >
         {/* Glass Panel */}
         <div className="h-full glass-card rounded-l-3xl border-l border-glass-border shadow-2xl overflow-hidden flex flex-col">
-          
           {/* Header Section - Single Logo with Proper Spacing */}
           <div className="flex items-center justify-between p-6 border-b border-glass-border/50 min-h-[80px]">
             <div className="flex items-center gap-3">
               <Logo size="sm" showText={false} glowIntensity="medium" />
               <div>
-                <h2 
-                  id="mobile-menu-title" 
+                <h2
+                  id="mobile-menu-title"
                   className="text-lg font-bold text-text-primary gradient-text"
                 >
                   Ashari Tech
@@ -89,7 +93,7 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
                 </p>
               </div>
             </div>
-            
+
             <Button
               variant="ghost"
               size="sm"
@@ -102,9 +106,9 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
           </div>
 
           {/* Navigation Links - Large Touch Targets */}
-          <nav 
-            className="flex-1 px-6 py-8 space-y-2 overflow-y-auto" 
-            role="navigation" 
+          <nav
+            className="flex-1 px-6 py-8 space-y-2 overflow-y-auto"
+            role="navigation"
             aria-label="Mobile navigation"
           >
             {navItems.map((item, index) => (
@@ -118,13 +122,13 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
                   "bg-transparent hover:bg-neon-orange/5 active:bg-neon-orange/10",
                   "rounded-2xl transition-all duration-300 ease-out",
                   "border border-transparent hover:border-neon-orange/20",
-                  "min-h-[56px] touch-target",
+                  "min-h-[56px] px-4 py-4",
                   "transform hover:translate-x-2 hover:scale-[1.02]",
-                  "animate-stagger-fade-in"
+                  "animate-stagger-fade-in",
                 )}
                 style={{
                   animationDelay: `${index * 50 + 100}ms`,
-                  animationFillMode: 'both'
+                  animationFillMode: "both",
                 }}
                 aria-label={item.ariaLabel}
               >
@@ -138,7 +142,8 @@ export function GlobalMobileMenu({ isOpen, onClose }: GlobalMobileMenuProps) {
           <div className="p-6 mt-auto">
             <div className="p-4 rounded-2xl bg-gradient-to-r from-neon-orange/10 via-gold-orange/10 to-magenta-accent/10 border border-neon-orange/20">
               <p className="text-sm text-text-secondary text-center font-medium">
-                Made with <span className="text-neon-orange">❤️</span> in Indonesia
+                Made with <span className="text-neon-orange">❤️</span> in
+                Indonesia
               </p>
               <p className="text-xs text-text-muted text-center mt-1">
                 Building the future, one innovation at a time
