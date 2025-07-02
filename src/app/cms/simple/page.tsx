@@ -21,7 +21,6 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Plus,
-  Settings,
   Home,
 } from "lucide-react";
 

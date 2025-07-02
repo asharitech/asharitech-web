@@ -95,9 +95,7 @@ export function ParticleField({
         for (let j = i + 1; j < particlesRef.current.length; j++) {
           const p1 = particlesRef.current[i];
           const p2 = particlesRef.current[j];
-          const distance = Math.sqrt(
-            (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2,
-          );
+          const distance = Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
 
           if (distance < maxDistance) {
             const opacity = 1 - distance / maxDistance;
@@ -127,7 +125,7 @@ export function ParticleField({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [particleCount, particleColor, lineColor, maxDistance, speed, Particle]);
+  }, [particleCount, lineColor, maxDistance]);
 
   return (
     <canvas

@@ -86,7 +86,8 @@ export function HolographicCard({
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
-            background: "linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.1) 45%, transparent 100%)",
+            background:
+              "linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.1) 45%, transparent 100%)",
             transform: "translateX(-100%)",
             animation: isHovered ? "shine 0.8s ease-in-out" : "none",
             opacity: isHovered ? 1 : 0,

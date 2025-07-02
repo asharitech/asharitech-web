@@ -299,33 +299,12 @@
 @layer utilities {
 
 
-  /* Mobile-optimized spacing */
-  .mobile-spacing {
-    @apply px-4 py-6;
-  }
-
-  @media (min-width: 640px) {
-    .mobile-spacing {
-      @apply px-6 py-8;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .mobile-spacing {
-      @apply px-8 py-12;
-    }
-  }
-
-  /* Mobile card spacing */
-  .mobile-card-spacing {
-    @apply p-4 gap-4;
-  }
-
-  @media (min-width: 640px) {
-    .mobile-card-spacing {
-      @apply p-6 gap-6;
-    }
-  }
+  /* Consistent spacing system - use Tailwind classes directly */
+  /* Horizontal padding: px-4 sm:px-6 lg:px-8 */
+  /* Vertical section padding: py-16 sm:py-24 lg:py-32 */
+  /* Card padding: p-6 sm:p-8 */
+  /* Small card padding: p-5 sm:p-6 */
+  /* Button sizes: min-h-[44px] for mobile touch targets */
 
   @media (min-width: 1024px) {
     .mobile-card-spacing {

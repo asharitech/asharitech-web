@@ -23,7 +23,9 @@ function getLuminance(color: Color): number {
   const { r, g, b } = color;
   const sRGB = [r, g, b].map((val) => {
     const normalized = val / 255;
-    return normalized <= 0.03928 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+    return normalized <= 0.03928
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
   });
   return 0.2126 * sRGB[0] + 0.7152 * sRGB[1] + 0.0722 * sRGB[2];
 }
@@ -56,7 +58,7 @@ export function meetsWCAG(
   if (level === "AA") {
     return isLargeText ? ratio >= 3 : ratio >= 4.5;
   }
-    return isLargeText ? ratio >= 4.5 : ratio >= 7;
+  return isLargeText ? ratio >= 4.5 : ratio >= 7;
 }
 
 // Color combinations used in the design
@@ -111,7 +113,7 @@ export const colorChecks = {
 export function runAccessibilityChecks() {
   console.log("=== WCAG Color Contrast Check ===\n");
 
-  Object.entries(colorChecks).forEach(([key, check]) => {
+  Object.entries(colorChecks).forEach(([_key, check]) => {
     const ratio = getContrastRatio(check.foreground, check.background);
     const meetsAA = meetsWCAG(ratio, "AA");
     const meetsAAA = meetsWCAG(ratio, "AAA");
