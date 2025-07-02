@@ -452,7 +452,7 @@ function HomeContent() {
                     {goal.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+                <CardContent className="px-6 pb-6">
                   <CardDescription className="text-text-secondary leading-relaxed text-sm">
                     {goal.description}
                   </CardDescription>
@@ -503,7 +503,7 @@ function HomeContent() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <p className="text-text-secondary italic mb-4 text-sm">
                   "Ashari Tech's AI solutions helped us increase customer
                   engagement by 45% and reduce operational costs by 30%. Their
@@ -531,7 +531,7 @@ function HomeContent() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <p className="text-text-secondary italic mb-4 text-sm">
                   "Brainy Buddy has been a game-changer for my studies. It
                   understands Indonesian curriculum perfectly and helps me
@@ -559,7 +559,7 @@ function HomeContent() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <p className="text-text-secondary italic mb-4 text-sm">
                   "The AI tools from Ashari Tech transformed our creative
                   process. We can now deliver projects 2x faster while
@@ -624,23 +624,23 @@ function HomeContent() {
             solutions. Start your digital transformation journey today.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          <div className="grid sm:grid-cols-3 gap-6 mb-10 sm:mb-12">
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center p-5 sm:p-6">
+              <CardHeader className="text-center p-6">
                 <div
-                  className="w-12 h-12 sm:w-14 sm:h-14 bg-neon-orange rounded-xl flex items-center justify-center mx-auto mb-3"
+                  className="w-14 h-14 bg-neon-orange rounded-xl flex items-center justify-center mx-auto mb-4"
                   style={{
                     boxShadow:
                       "0 0 20px rgba(255, 153, 0, 0.5), 0 0 40px rgba(255, 153, 0, 0.3), 0 0 60px rgba(255, 153, 0, 0.1)",
                   }}
                 >
-                  <Mail className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Mail className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-base sm:text-lg text-text-primary">
                   Email
                 </CardTitle>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <a
                   href="mailto:support@ashari.tech"
                   className="text-neon-orange hover:text-neon-orange/80 font-medium transition-colors text-sm sm:text-base"
@@ -651,21 +651,21 @@ function HomeContent() {
             </Card>
 
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center p-5 sm:p-6">
+              <CardHeader className="text-center p-6">
                 <div
-                  className="w-12 h-12 sm:w-14 sm:h-14 bg-gold-orange rounded-xl flex items-center justify-center mx-auto mb-3"
+                  className="w-14 h-14 bg-gold-orange rounded-xl flex items-center justify-center mx-auto mb-4"
                   style={{
                     boxShadow:
                       "0 0 20px rgba(255, 179, 71, 0.5), 0 0 40px rgba(255, 179, 71, 0.3), 0 0 60px rgba(255, 179, 71, 0.1)",
                   }}
                 >
-                  <Github className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Github className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-base sm:text-lg text-text-primary">
                   GitHub
                 </CardTitle>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <a
                   href="https://github.com/asharitech"
                   className="text-gold-orange hover:text-gold-orange/80 font-medium transition-colors text-sm sm:text-base"
@@ -678,21 +678,21 @@ function HomeContent() {
             </Card>
 
             <Card className="glass-card border-0 hover:shadow-xl transition-all duration-300">
-              <CardHeader className="text-center p-5 sm:p-6">
+              <CardHeader className="text-center p-6">
                 <div
-                  className="w-12 h-12 sm:w-14 sm:h-14 bg-magenta-accent rounded-xl flex items-center justify-center mx-auto mb-3"
+                  className="w-14 h-14 bg-magenta-accent rounded-xl flex items-center justify-center mx-auto mb-4"
                   style={{
                     boxShadow:
                       "0 0 20px rgba(233, 75, 138, 0.5), 0 0 40px rgba(233, 75, 138, 0.3), 0 0 60px rgba(233, 75, 138, 0.1)",
                   }}
                 >
-                  <Instagram className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+                  <Instagram className="h-7 w-7 text-white" />
                 </div>
                 <CardTitle className="text-base sm:text-lg text-text-primary">
                   Instagram
                 </CardTitle>
               </CardHeader>
-              <CardContent className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <CardContent className="px-6 pb-6">
                 <a
                   href="https://instagram.com/ashari.tech"
                   className="text-magenta-accent hover:text-magenta-accent/80 font-medium transition-colors text-sm sm:text-base"

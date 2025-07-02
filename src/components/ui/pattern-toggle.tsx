@@ -45,7 +45,7 @@ export function PatternToggle() {
             variant="ghost"
             size="icon"
             onClick={togglePatterns}
-            className="fixed bottom-4 right-4 z-50 glass-card hover:border-neon-orange/30 transition-all duration-300"
+            className="fixed bottom-6 right-6 z-50 glass-card hover:border-neon-orange/30 transition-all duration-300 min-h-[48px] min-w-[48px]"
             aria-label={
               patternsVisible
                 ? "Hide background patterns for reduced visual distraction"
@@ -53,9 +53,9 @@ export function PatternToggle() {
             }
           >
             {patternsVisible ? (
-              <EyeOff className="h-4 w-4 text-text-secondary" />
+              <EyeOff className="h-5 w-5 text-text-secondary" />
             ) : (
-              <Eye className="h-4 w-4 text-text-secondary" />
+              <Eye className="h-5 w-5 text-text-secondary" />
             )}
           </Button>
         </TooltipTrigger>

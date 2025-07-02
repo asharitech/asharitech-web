@@ -21,7 +21,7 @@ export function MobileMenuButton({
       size="sm"
       onClick={onClick}
       className={cn(
-        "mobile-menu-button p-3 hover:bg-neon-orange/10 transition-colors relative min-h-[48px] min-w-[48px] rounded-xl",
+        "mobile-menu-button p-2 hover:bg-neon-orange/10 transition-colors relative min-h-[52px] min-w-[52px] rounded-xl",
         className,
       )}
       aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -31,13 +31,13 @@ export function MobileMenuButton({
       <div className="relative">
         <Menu
           className={cn(
-            "h-6 w-6 text-neon-orange transition-all duration-200 ease-out",
+            "h-7 w-7 text-neon-orange transition-all duration-200 ease-out",
             isOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100",
           )}
         />
         <X
           className={cn(
-            "h-6 w-6 text-neon-orange absolute inset-0 transition-all duration-200 ease-out",
+            "h-7 w-7 text-neon-orange absolute inset-0 transition-all duration-200 ease-out",
             isOpen ? "rotate-0 opacity-100" : "rotate-45 opacity-0",
           )}
         />
