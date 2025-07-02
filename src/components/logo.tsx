@@ -5,6 +5,7 @@ interface LogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   showText?: boolean;
   glowIntensity?: "low" | "medium" | "high";
+  as?: "h1" | "div";
 }
 
 const Logo: React.FC<LogoProps> = ({
@@ -12,6 +13,7 @@ const Logo: React.FC<LogoProps> = ({
   size = "md",
   showText = true,
   glowIntensity = "medium",
+  as = "div",
 }) => {
   const sizeMap = {
     sm: { logo: 32, text: "text-lg" },
@@ -157,9 +159,19 @@ const Logo: React.FC<LogoProps> = ({
       {/* Company name */}
       {showText && (
         <div>
-          <h1 className={`font-bold tracking-tight gradient-text ${textSize}`}>
-            Ashari Tech
-          </h1>
+          {as === "h1" ? (
+            <h1
+              className={`font-bold tracking-tight gradient-text ${textSize}`}
+            >
+              Ashari Tech
+            </h1>
+          ) : (
+            <div
+              className={`font-bold tracking-tight gradient-text ${textSize}`}
+            >
+              Ashari Tech
+            </div>
+          )}
           {size !== "sm" && (
             <p className="text-xs text-muted-foreground uppercase tracking-widest">
               Revolutionizing with AI
