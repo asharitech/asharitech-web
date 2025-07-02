@@ -160,15 +160,21 @@
     color: var(--color-text-secondary);
   }
 
-  /* Link styles for accessibility */
+  /* Link styles for accessibility - only for inline text links */
+  /* Navigation links and buttons should not have underlines */
   a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  /* Only add underlines to inline text links (not nav or buttons) */
+  p a, li a, td a, .text-content a {
     color: var(--color-neon-orange);
     text-decoration: underline;
     text-underline-offset: 3px;
-    transition: all 0.2s ease;
   }
 
-  a:hover {
+  p a:hover, li a:hover, td a:hover, .text-content a:hover {
     color: var(--color-gold-orange);
     text-decoration-thickness: 2px;
   }
